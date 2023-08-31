@@ -11,21 +11,28 @@ public class Main {
             System.out.println("Приложения для вашей операционной системы еще в разработке");
         }
         //Задача №2
-        int clientDeviceYear = 2013;
-        if (clientOC == 0 && clientDeviceYear > 2015) {
+        int clientDeviceYear = 2015;
+        if (clientOC == 0 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOC == 0 && clientDeviceYear < 2015) {
+        } else if (clientOC == 0 && clientDeviceYear <= 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOC == 1 && clientDeviceYear > 2015) {
+        } else if (clientOC == 1 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите облегченную версию приложения для Android по ссылке.");
         }
         //Задача №3
-        int year = 2024;
-        int leapYear = year % 4;
-        if (leapYear == 0) {
+        int year = 1584;
+        int leapYear = year%4;
+        int in400year = year%400;
+        int in100year = year%100;
+
+        if (in100year==0&&in400year==0) {
             System.out.println(year + " год является високосным");
+        } else if (leapYear==0&&in100year>0) {
+            System.out.println(year + " год является високосным");
+        } else if (in100year==0) {
+            System.out.println(year + " год не является високосным");
         } else {
             System.out.println(year + " год не является високосным");
         }
@@ -43,6 +50,7 @@ public class Main {
         //Задача №5
         int monthNumber = 3;
         switch (monthNumber) {
+            case 12:
             case 1:
             case 2:
                 System.out.println("Зима");
@@ -61,9 +69,6 @@ public class Main {
             case 10:
             case 11:
                 System.out.println("Осень");
-                break;
-            case 12:
-                System.out.println("Зима");
                 break;
             default:
                 System.out.println("Нет такого месяца");
